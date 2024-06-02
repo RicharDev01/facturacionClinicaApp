@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
+
+// Modulos
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
 import { PrimengModule } from './primeng/primeng.module'
+import { DashboardModule } from './dashboard/dashboard.module'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
+// Componentes
+import { AppComponent } from './app.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +17,9 @@ import { PrimengModule } from './primeng/primeng.module'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PrimengModule
+    PrimengModule,
+    DashboardModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

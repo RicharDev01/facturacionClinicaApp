@@ -7,7 +7,7 @@ import { PrimeNGConfig } from 'primeng/api';
   styles: []
 })
 export class AppComponent {
-  title = 'facturacionApp';
+
 
   constructor(private primengConfig: PrimeNGConfig) {}
 

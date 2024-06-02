@@ -1,0 +1,44 @@
+
+<div class="card">
+  <p-menubar [model]="items" >
+    
+    <ng-template pTemplate="start" >
+      <span (click)="showSideMenu()" class="cursor-pointer" pRipple>
+        <i class="pi pi-bars"></i>        
+        Menu
+      </span>
+    </ng-template>
+    
+    <ng-template pTemplate="item" let-item >
+
+    <a pRipple class="flex align-items-center p-menuitem-link">
+
+      <span [class]="item.icon"></span>
+
+      <span class="ml-2">{{ item.label }}</span>
+
+    </a>
+
+    </ng-template>
+
+    <ng-template pTemplate="end" >
+
+      <div class="flex gap-4 align-items-center">
+
+        <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png" shape="circle" size="large"  />
+
+        <div class="flex flex-column">
+
+          <span>Dr. Pedro Hernandez</span>
+
+          <span> <i class="pi pi-circle-on text-green-500 text-sm"></i> En Linea</span>
+
+        </div>
+
+      </div>
+
+    </ng-template>
+    
+  </p-menubar>
+</div>
+
