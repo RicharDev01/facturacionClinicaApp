@@ -1,0 +1,33 @@
+
+<section class="card w-20rem border-round mx-3">
+  <div class="card p-2 surface-100">
+    
+    <p class="data flex justify-content-between ">
+      <span>Sub total</span>
+      <span> {{ 44.24 | currency }} </span>
+    </p>
+
+    <hr>
+
+    <p class="data flex justify-content-between">
+      <span>Descuentos</span>
+      <span> {{ 0 | percent }} </span>
+      <span> {{ 0 | currency }} </span>
+    </p>
+
+    <hr>
+
+    <p class="data flex justify-content-between">
+      <span>IVA</span>
+      <span> {{ 0.13 | percent }} </span>
+      <span> {{ 5.76 | currency }} </span>
+    </p>
+
+  </div>
+
+  <div class="card bg-primary text-white flex flex-column align-items-center p-2">
+    <span class="text-5xl">{{ 'Total' | uppercase }}</span>
+    <span class="text-5xl"> {{ 50 | currency }} </span>
+  </div>
+
+</section>

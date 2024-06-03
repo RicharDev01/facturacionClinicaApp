@@ -14,6 +14,9 @@ import { DashboardInitialComponent } from './pages/dashboard-initial/dashboard-i
 import { FacturacionPageComponent } from './pages/facturacion-page/facturacion-page.component';
 import { NuevoPacientePageComponent } from './pages/nuevo-paciente-page/nuevo-paciente-page.component';
 import { NuevoEstudioPageComponent } from './pages/nuevo-estudio-page/nuevo-estudio-page.component';
+import { ClienteInfoComponent } from './components/cliente-info/cliente-info.component';
+import { EstudioInfoComponent } from './components/estudio-info/estudio-info.component';
+import { CompraInfoComponent } from './components/compra-info/compra-info.component';
 
 
 
@@ -26,7 +29,10 @@ import { NuevoEstudioPageComponent } from './pages/nuevo-estudio-page/nuevo-estu
     DashboardInitialComponent,
     FacturacionPageComponent,
     NuevoPacientePageComponent,
-    NuevoEstudioPageComponent
+    NuevoEstudioPageComponent,
+    ClienteInfoComponent,
+    EstudioInfoComponent,
+    CompraInfoComponent
   ],
   imports: [
     CommonModule,
@@ -35,7 +41,8 @@ import { NuevoEstudioPageComponent } from './pages/nuevo-estudio-page/nuevo-estu
   ],
   exports:[
     SidebarMenuComponent,
-    NavbarComponent
+    NavbarComponent,
+    // DashboardRoutingModule
   ]
 })
 export class DashboardModule { }

@@ -17,8 +17,8 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    PrimengModule,
-    DashboardModule,
+    // PrimengModule,
+    // DashboardModule,
     BrowserAnimationsModule
   ],
   providers: [],

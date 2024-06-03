@@ -1,0 +1,37 @@
+<section class="card flex justify-content-center gap-6">
+
+  <form class="card flex justify-content-center flex-column">
+
+    <label for="buscar-paciente" class="mb-2">
+      Buscar paciente
+    </label>
+
+    <div class="w-20rem">
+      <input type="text" pInputText formControlName="text" placeholder="DUI o ID del paciente" name="buscar-paciente"
+        id="buscar-paciente" />
+      <p-button icon="pi pi-search" styleClass="bg-primary text-white" />
+    </div>
+
+  </form>
+
+  <p-panel header="Datos del paciente" >
+    
+    <div class="flex justify-content-between gap-7 mb-5">
+      Nombre: <strong> Mario Ricardo Pineda</strong>
+      Tel. <strong> 7875-2587</strong>
+    </div>
+    
+    <div class="flex justify-content-between">
+      Email: <strong> rpineda&#64;mail.com</strong>
+      Edad: <strong> 27 años</strong>
+    </div>
+
+  </p-panel>
+
+  <p-panel header="Fecha de Emision de factura" styleClass="w-20rem">
+    <p>
+      {{ emisionFactura | date:'dd/MM/yyyy hh:mm a' }}
+    </p>
+  </p-panel>
+  
+</section>

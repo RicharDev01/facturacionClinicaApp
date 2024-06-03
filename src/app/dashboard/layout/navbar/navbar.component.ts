@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component } from '@angular/core';
 import { MenuItem } from 'primeng/api';
 import { ToolsService } from '../../../core/services/tools.service';
 
@@ -22,18 +22,22 @@ export class NavbarComponent {
       {
         label: 'Dashboard',
         icon: 'pi pi-home',
+        routerLink: ''
       },
       {
         label: 'Facturacion',
         icon: 'pi pi-receipt',
+        routerLink: 'facturacion'
       },
       {
-        label: 'Nuevo cliente',
+        label: 'Nuevo paciente',
         icon: 'pi pi-user-plus',
+        routerLink: 'nuevo-paciente'
       },
       {
         label: 'Nuevo estudio',
         icon: 'pi pi-folder-plus',
+        routerLink: 'nuevo-estudio'
       },
     ];
 
