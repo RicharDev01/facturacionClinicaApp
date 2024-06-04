@@ -23,21 +23,23 @@
 </section>
 
 <div class="container">
-  <p-table [value]="[1,2,3,4]" [tableStyle]="{ 'min-width': '50rem' }">
+  <p-table [value]="listaCompras" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template pTemplate="header">
         <tr>
-            <th>Code</th>
-            <th>Name</th>
-            <th>Category</th>
-            <th>Quantity</th>
+            <th># Factura</th>
+            <th>Estudio</th>
+            <th>Paciente</th>
+            <th>Fecha</th>
+            <th>Cantidad</th>
         </tr>
     </ng-template>
-    <ng-template pTemplate="body" let-product>
+    <ng-template pTemplate="body" let-compra>
         <tr>
-            <td> Data </td>
-            <td> Data </td>
-            <td> Data </td>
-            <td> Data </td>
+            <td> {{ compra.id }} </td>
+            <td> {{ compra.estudioId }} </td>
+            <td> {{ compra.facturaId }} </td>
+            <td> {{ compra.precioCompra }} </td>
+            <td> {{ compra.cantidad }} </td>
         </tr>
     </ng-template>
   </p-table>

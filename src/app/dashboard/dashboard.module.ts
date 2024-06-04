@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PrimengModule } from '../primeng/primeng.module';
 import { DashboardRoutingModule } from './dashboard-routing.routing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 // componentes
 import { SidebarMenuComponent } from './layout/sidebar-menu/sidebar-menu.component';
@@ -17,6 +18,7 @@ import { NuevoEstudioPageComponent } from './pages/nuevo-estudio-page/nuevo-estu
 import { ClienteInfoComponent } from './components/cliente-info/cliente-info.component';
 import { EstudioInfoComponent } from './components/estudio-info/estudio-info.component';
 import { CompraInfoComponent } from './components/compra-info/compra-info.component';
+
 
 
 
@@ -37,7 +39,8 @@ import { CompraInfoComponent } from './components/compra-info/compra-info.compon
   imports: [
     CommonModule,
     PrimengModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    ReactiveFormsModule
   ],
   exports:[
     SidebarMenuComponent,

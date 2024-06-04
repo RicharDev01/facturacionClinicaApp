@@ -1,19 +1,25 @@
-<form action="#" class="container surface-100 p-5 w-30rem border-round-xl">
+<form action="#" [formGroup]="estudioForm" (ngSubmit)="onSubmit()" class="container surface-100 p-5 w-30rem border-round-xl">
 
-  <h2>Registro de estdios</h2>
+  <input id="idEstudio" type="hidden"
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        formControlName="id" >
+
+  <h2>Registro de estudios</h2>
 
     <div class="field">
       <label for="nombre">Nombre de estudio</label>
       <input id="nombre" type="text"
-        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        formControlName="nombre">
     </div>
     <div class="field">
       <label for="precio">Precio de estudio</label>
       <input id="precio" type="text"
-        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        formControlName="precio">
     </div>
   
-    <p-button label="Crear Estudio" styleClass="bg-primary text-white w-full" />
+    <p-button label="Crear Estudio" styleClass="bg-primary text-white w-full" type="submit" />
 
 
 </form>
