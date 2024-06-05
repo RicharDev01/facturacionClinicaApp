@@ -23,3 +23,22 @@
 
 
 </form>
+
+<div class="container mt-4">
+  <p-table [value]="listaEstudios" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-estudio>
+        <tr>
+            <td>{{ estudio.id }}</td>
+            <td>{{ estudio.nombre }}</td>
+            <td>{{ estudio.precio }}</td>
+        </tr>
+    </ng-template>
+  </p-table>
+</div>

@@ -8,7 +8,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './nuevo-estudio-page.component.html',
   styles: ``
 })
-export class NuevoEstudioPageComponent {
+export class NuevoEstudioPageComponent implements OnInit {
+
+  public listaEstudios: Estudio[] = []
 
 
   public estudioForm: FormGroup = this.formBuilder.group({
@@ -22,6 +24,11 @@ export class NuevoEstudioPageComponent {
     private formBuilder: FormBuilder
   ) { }
 
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    this.listaEstudios = this.estudioA.obtenerEstudios
+  }
 
   public onSubmit(): void {
     let res: boolean = this.estudioA.agregarEstudio( this.estudioForm.value )
