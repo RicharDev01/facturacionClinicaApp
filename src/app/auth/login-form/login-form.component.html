@@ -1,0 +1,27 @@
+<div class="container flex justify-content-center align-items-center" style="height: 98vh;">
+  
+  <form class="surface-100 h-22rem p-4">
+
+    <h2>Inicio de sesion</h2>
+
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+
+    <div class="field">
+      <label for="password">Password</label>
+      <input id="password" type="password" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+    </div>
+    
+    <p-button 
+      icon="pi pi-signin" 
+      styleClass="bg-primary text-white w-full " 
+      size="large" 
+      label="Iniciar sesion"
+      (click)="iniciarSesion()"></p-button>
+
+  </form>
+  
+  <div class="w-12rem bg-blue-300 h-22rem w-20rem"></div>
+</div>

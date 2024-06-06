@@ -2,19 +2,19 @@
 
   <p-card header="Numero de factura">
     <p class="m-0 text-center">
-        <span class="text-2xl font-bold text-primary" >0001</span>
+        <span class="text-2xl font-bold text-primary" >000{{ factura.id }} </span>
     </p>
   </p-card>
   
-  <p-card header="Logo">
+  <p-card header="Clinica de ultrasonido">
     <p class="m-0 text-center">
-      <span class="text-2xl font-bold text-primary" >Clinica de ultrasonido <br> Dr. Pedro Hernandez</span>
+      <span class="text-2xl font-bold text-primary" >Dr. Pedro Hernandez</span>
     </p>
   </p-card>
   
   <p-card header="Estado de factra">
     <p class="m-0 text-center">
-      <span class="text-2xl font-bold text-primary" >Activa</span>
+      <span class="text-2xl font-bold text-primary" > {{ factura.estado ? 'ACTIVA': 'ANULADA' }} </span>
     </p>
   </p-card>
 
@@ -22,8 +22,13 @@
 
 <app-cliente-info></app-cliente-info>
 
-<div class="flex align-items-baseline">
+<div class="flex align-items-baseline container">
   <app-estudio-info></app-estudio-info>
 
-  <app-compra-info></app-compra-info>
+  <div class="flex flex-column align-items-center">
+    <app-compra-info></app-compra-info>
+
+    <p-button styleClass=" mt-2" label="Generar Factura" size="large" (click)="generarFactura()"></p-button>
+  </div>
+
 </div>

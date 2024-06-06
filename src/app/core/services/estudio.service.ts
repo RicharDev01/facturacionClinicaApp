@@ -8,8 +8,8 @@ import { Estudio } from '../interfaces/estudio.interface';
 export class EstudioService {
 
   private listaEstudios: Estudio[] = []
-  
-  private IDestudio: number = 1
+
+  private estudio: Estudio | any = null
 
   constructor() {
 
@@ -63,6 +63,10 @@ export class EstudioService {
     this.listaEstudios = dataResponse // le asigno el resultado en mi arreglo del servicio
     return this.listaEstudios // retorno el Array de los estudios.
 
+  }
+
+  get obtenerEstudio(): Estudio {
+    return this.estudio
   }
 
 }

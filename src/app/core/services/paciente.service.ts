@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core'
 import { Paciente } from '../interfaces/paciente.interface'
+import { Observable } from 'rxjs'
 
 @Injectable({
   providedIn: 'root'
 })
 export class PacienteService {
+
+  private paciente: Paciente | any = null 
 
   private listaPacientes: Paciente[] = []
 
@@ -60,6 +63,32 @@ export class PacienteService {
     } else {
       return 1
     }
+  }
+
+
+  public pacienteById( identificador: string ): Paciente[] {
+
+    if ( localStorage.getItem('pacienteId') ) {
+
+      let arrPacientes = JSON.parse( localStorage.getItem('pacienteId')! )
+
+      let paciente = arrPacientes.filter( (paciente: Paciente) => paciente.DUI === identificador )
+      
+      this.paciente = paciente
+
+      return paciente
+      
+
+    } else {
+
+      return []
+    }
+
+
+  }
+
+  get getPaciente(): Paciente {
+    return this.paciente
   }
 
 }

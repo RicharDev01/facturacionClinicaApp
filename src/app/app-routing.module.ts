@@ -5,8 +5,13 @@ import { NotFoundComponent } from './shared/pages/not-found/not-found.component'
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dashboard',
+    redirectTo: 'auth',
     pathMatch: 'full'
+  },
+
+  {
+    path: 'auth',
+    loadChildren: () => import('./auth/auth.module').then( m => m.AuthModule )
   },
 
   {

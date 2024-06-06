@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Compra } from '../../../core/interfaces/compra.interface';
+import { Factura } from '../../../core/interfaces/factura.interface';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -13,16 +13,18 @@ export class DashboardPageComponent implements OnInit {
   public totalVenta: number = 0; // el precio total de las ventas del dia
   public totalCompras: number = 0; // el conteo total de los estudios vendidos del  dia. 
 
-  public listaCompras: Compra[] = [];
+  public listaCompras: Factura[] = [];
 
   constructor() {}
 
   ngOnInit(): void {
 
-    let compra1: Compra = {
+    let compra1: Factura = {
       id: 1,
       estudioId: 1,
-      facturaId: 1,
+      pacienteId: 1,
+      estado: true,
+      fechaEmision: new Date(),
       precioCompra: 50,
       cantidad: 1
 
