@@ -1,3 +1,4 @@
+import { ReactiveFormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginPageComponent } from './login-page/login-page.component';
@@ -15,7 +16,8 @@ import { PrimengModule } from '../primeng/primeng.module';
   imports: [
     CommonModule,
     AuthRoutingModule,
-    PrimengModule
+    PrimengModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthModule { }

@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login-form',
@@ -7,6 +8,11 @@ import { Component } from '@angular/core';
   styles: ``
 })
 export class LoginFormComponent {
+
+  public formLogin: FormGroup = new FormGroup({
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required])
+  })
 
   constructor(
     private router: Router
@@ -16,7 +22,15 @@ export class LoginFormComponent {
 
   public iniciarSesion(): void {
 
-    this.router.navigate(['dashboard'])
+    let username = this.formLogin.value.username
+    let password = this.formLogin.value.password
+    
+    if ( username === 'admin' && password === 'admin' ) {
+      
+      this.router.navigate(['dashboard'])
+      
+    }
+
 
   }
 

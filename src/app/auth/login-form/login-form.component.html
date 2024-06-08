@@ -1,17 +1,25 @@
 <div class="container flex justify-content-center align-items-center" style="height: 98vh;">
   
-  <form class="surface-100 h-22rem p-4">
+  <form class="surface-100 h-22rem p-4" [formGroup]="formLogin" autocomplete="off">
 
     <h2>Inicio de sesion</h2>
 
     <div class="field">
-      <label for="email">Email</label>
-      <input id="email" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      <label for="username">Username</label>
+      <input 
+        id="username" 
+        type="text" 
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        formControlName="username" autocomplete="false">
     </div>
 
     <div class="field">
       <label for="password">Password</label>
-      <input id="password" type="password" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+      <input 
+        id="password" 
+        type="password" 
+        class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
+        formControlName="password" autocomplete="false">
     </div>
     
     <p-button 
@@ -23,5 +31,9 @@
 
   </form>
   
-  <div class="w-12rem bg-blue-300 h-22rem w-20rem"></div>
+  <div class="w-12rem bg-blue-300 h-22rem w-20rem grid">
+    <p class="col-12 text-white text-center text-4xl">Data Access</p>
+    <p class="col-12 text-white text-center text-2xl">Username: admin</p>
+    <p class="col-12 text-white text-center text-2xl">Password: admin</p>
+  </div>
 </div>
