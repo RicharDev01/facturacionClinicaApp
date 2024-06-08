@@ -6,7 +6,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 @Component({
   selector: 'app-nuevo-estudio-page',
   templateUrl: './nuevo-estudio-page.component.html',
-  styles: ``
+  styles: `
+    .invalid {
+      border: 2px solid red !important;
+    }
+  `
 })
 export class NuevoEstudioPageComponent implements OnInit {
 
@@ -18,6 +22,9 @@ export class NuevoEstudioPageComponent implements OnInit {
     nombre: ['', Validators.required],
     precio: [0, Validators.required],
   })
+
+  public classInvalid: string = ''
+  public messageError: string = ''
 
   constructor(
     private estudioA: EstudioService,
@@ -31,11 +38,17 @@ export class NuevoEstudioPageComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    let res: boolean = this.estudioA.agregarEstudio( this.estudioForm.value )
-    if ( res ) {
-      this.estudioForm.reset()
+    
+    if (!this.estudioForm.controls['nombre'].invalid && !this.estudioForm.controls['precio'].invalid ) {
+      let res: boolean = this.estudioA.agregarEstudio( this.estudioForm.value )
+      if ( res ) {
+        this.estudioForm.reset()
+      } else {
+        alert("Hubo un error, no se agrego el estudio")
+      }
     } else {
-      alert("Hubo un error, no se agrego el estudio")
+      this.messageError = 'Todos los campos son obligatorios'
+      this.classInvalid = 'invalid'
     }
 
   }

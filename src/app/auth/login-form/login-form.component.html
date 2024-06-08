@@ -2,6 +2,8 @@
   
   <form class="surface-100 h-22rem p-4" [formGroup]="formLogin" autocomplete="off">
 
+    <p> {{ messagesError }} </p>
+
     <h2>Inicio de sesion</h2>
 
     <div class="field">
@@ -10,7 +12,8 @@
         id="username" 
         type="text" 
         class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-        formControlName="username" autocomplete="false">
+        formControlName="username" autocomplete="false"
+        [ngClass]="classInvalid">
     </div>
 
     <div class="field">
@@ -19,7 +22,8 @@
         id="password" 
         type="password" 
         class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full"
-        formControlName="password" autocomplete="false">
+        formControlName="password" autocomplete="false"
+        [ngClass]="classInvalid">
     </div>
     
     <p-button 

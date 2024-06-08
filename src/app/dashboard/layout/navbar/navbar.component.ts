@@ -22,7 +22,7 @@ export class NavbarComponent {
       {
         label: 'Dashboard',
         icon: 'pi pi-home',
-        routerLink: ''
+        routerLink: './'
       },
       {
         label: 'Facturacion',

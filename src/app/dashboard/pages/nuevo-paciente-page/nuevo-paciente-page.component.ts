@@ -6,7 +6,11 @@ import { Paciente } from '../../../core/interfaces/paciente.interface';
 @Component({
   selector: 'app-nuevo-paciente-page',
   templateUrl: './nuevo-paciente-page.component.html',
-  styles: ``
+  styles: `
+    .invalid {
+      border: 2px solid red !important;
+    }
+  `
 })
 export class NuevoPacientePageComponent {
 
@@ -18,10 +22,13 @@ export class NuevoPacientePageComponent {
     apellido: ['', Validators.required],
     fechaNac: [Date, Validators.required],
     DUI: ['', Validators.required],
-    email: ['', Validators.required],
-    telefono: ['', Validators.required],
-    direccion: ['', Validators.required],
+    email: [''],
+    telefono: [''],
+    direccion: [''],
   })
+
+  public classInvalid: string = ''
+  public messageError: string = ''
 
   constructor(
     private formBuilder: FormBuilder,
@@ -35,12 +42,19 @@ export class NuevoPacientePageComponent {
   }
 
   public onSubmit(){
-    let res: boolean = this.pacienteService.agregarPaciente( this.pacienteForm.value )
-    if ( res ) {
-      this.pacienteForm.reset()
+    
+    if (this.pacienteForm.status == 'VALID') {
+      let res: boolean = this.pacienteService.agregarPaciente( this.pacienteForm.value )
+      if ( res ) {
+        this.pacienteForm.reset()
+      } else {
+        alert("Hubo un error, no se agrego el paciente")
+      }
     } else {
-      alert("Hubo un error, no se agrego el paciente")
+      this.messageError = 'Los datos personales son obligatorios'
+      this.classInvalid = 'invalid'
     }
+
   }
 
 
